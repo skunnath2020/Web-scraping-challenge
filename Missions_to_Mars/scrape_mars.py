@@ -9,17 +9,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 # from flask_pymongo import PyMongo
 import os
 import time
-def init_browser()
+def init_browser():
     exec_path={'executable_path': 'chromedriver'}
     return Browser('chrome', **exec_path, headless=False)
 
 
 def scrape():
     # NASA Mars news
-
+    browser = init_browser()
     #Scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text.
     url="https://mars.nasa.gov/news/"
-    #response=requests.get(url)
     browser.visit(url)
 
     #create a Beautiful Soup object
@@ -31,11 +30,9 @@ def scrape():
     news_p=soup.find_all('div', class_='article_teaser_body')[0].text
 
     ##### JPL Mars Space Images - Featured Image
-
-
     #assign the url string to a variable called `featured_image_url`.
     url="https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html"
-    response=requests.get(url)
+    browser.visit(url)
 
     # Use splinter to navigate the site and find the image url for the current Featured Mars Image
     html=browser.html
@@ -44,7 +41,10 @@ def scrape():
 
     jpl_img='https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/'
     img_url=soup.find_all('img')[1]
+
+    print(img_url)
     featured_image_url=jpl_img+img_url['src']
+    featured_image_url
 
     ##### Mars Facts
 
@@ -99,8 +99,7 @@ def scrape():
         "news_title": news_title,
         "news_p": news_p,
         "featured_image_url": featured_image_url,
-        "mars_weather": mars_weather,
-        "fact_table": str(mars_html_table),
+        "mars_html_table": str(mars_html_table),
         "hemisphere_images": hemisphere_image_urls
     }
     return mars_dict
