@@ -76,6 +76,7 @@ def scrape():
 
     #Use a Python dictionary to store the data using the keys `img_url` and `title` 
     hemisphere_image_urls=[]
+    mars_imgs=[]
     for hs in mars_hemisphere:
         #get title 
         title=hs.find('h3').text.replace(' Enhanced', '')
@@ -103,3 +104,5 @@ def scrape():
         "hemisphere_images": hemisphere_image_urls
     }
     return mars_dict
+
+    
