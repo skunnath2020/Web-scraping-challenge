@@ -2,7 +2,7 @@
 
 ![mission_to_mars](Images/Mars.PNG)
 
-In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines what you need to do.
+In this assignment, the ask is to  a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines were completed.
 
 ## Step 1 - Scraping
 
@@ -14,7 +14,7 @@ Requests/Splinter.
 
 ### NASA Mars News
 
-* Scrape the [NASA Mars News Site](https://mars.nasa.gov/news/) and collect the latest News Title and Paragraph Text. Assign the text to variables that can be referenced later.
+* Scrapeddd the [NASA Mars News Site](https://mars.nasa.gov/news/) and collect the latest News Title and Paragraph Text. Assigned the text to variables that can be referenced later.
 
 ```python
 # Example:
@@ -26,13 +26,13 @@ news_p = "Preparation of NASA's next spacecraft to Mars, InSight, has ramped up 
 
 ### JPL Mars Space Images - Featured Image
 
-* Visit the url for JPL Featured Space Image [here](https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html).
+* Visited the url for JPL Featured Space Image [here](https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html).
 
-* Use splinter to navigate the site and find the image url for the current Featured Mars Image and assign the url string to a variable called `featured_image_url`.
+* Used splinter to navigate the site and find the image url for the current Featured Mars Image and assign the url string to a variable called `featured_image_url`.
 
-* Make sure to find the image url to the full size `.jpg` image.
+* Made sure to find the image url to the full size `.jpg` image.
 
-* Make sure to save a complete url string for this image.
+* Saved a complete url string for this image.
 
 ```python
 # Example:
@@ -49,11 +49,11 @@ featured_image_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/im
 
 * Visit the USGS Astrogeology site [here](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) to obtain high resolution images for each of Mar's hemispheres.
 
-* You will need to click each of the links to the hemispheres in order to find the image url to the full resolution image.
+* Click each of the links to the hemispheres in order to find the image url to the full resolution image.
 
-* Save both the image url string for the full resolution hemisphere image, and the Hemisphere title containing the hemisphere name. Use a Python dictionary to store the data using the keys `img_url` and `title`.
+* Saved both the image url string for the full resolution hemisphere image, and the Hemisphere title containing the hemisphere name. Used a Python dictionary to store the data using the keys `img_url` and `title`.
 
-* Append the dictionary with the image url string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere.
+* Appended the dictionary with the image url string and the hemisphere title to a list. This list contains one dictionary for each hemisphere.
 
 ```python
 # Example:
@@ -69,7 +69,7 @@ hemisphere_image_urls = [
 
 ## Step 2 - MongoDB and Flask Application
 
-Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
+Used MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
 
 * Start by converting your Jupyter notebook into a Python script called `scrape_mars.py` with a function called `scrape` that will execute all of your scraping code from above and return one Python dictionary containing all of the scraped data.
 
@@ -88,7 +88,7 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 
 ## Step 3 - Submission
 
-To submit your work to BootCampSpot, create a new GitHub repository and upload the following:
+The GitHub repository contains the following:
 
 1. The Jupyter Notebook containing the scraping code used.
 
@@ -100,12 +100,10 @@ To submit your work to BootCampSpot, create a new GitHub repository and upload t
 
 ## Hints
 
-* Use Splinter to navigate the sites when needed and BeautifulSoup to help find and parse out the necessary data.
+* Used Splinter to navigate the sites when needed and BeautifulSoup to help find and parse out the necessary data.
 
-* Use Pymongo for CRUD applications for your database. For this homework, you can simply overwrite the existing document each time the `/scrape` url is visited and new data is obtained.
+* Used Pymongo for CRUD applications for your database. For this homework, you can simply overwrite the existing document each time the `/scrape` url is visited and new data is obtained.
 
-* Use Bootstrap to structure your HTML template.
+* Used Bootstrap to structure your HTML template.
 
-### Copyright
 
-Trilogy Education Services © 2021. All Rights Reserved.
