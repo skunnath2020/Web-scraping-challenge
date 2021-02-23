@@ -92,18 +92,15 @@ The GitHub repository contains the following:
 
 1. The Jupyter Notebook containing the scraping code used.
 
-2. Screenshots of your final application.
+2. Screenshots of the final application.
 
-3. Submit the link to your new repository to BootCampSpot.
-
-4. Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
 
 ## Hints
 
 * Used Splinter to navigate the sites when needed and BeautifulSoup to help find and parse out the necessary data.
 
-* Used Pymongo for CRUD applications for your database. For this homework, you can simply overwrite the existing document each time the `/scrape` url is visited and new data is obtained.
+* Used Pymongo for CRUD applications for your database. The record is simply overwritten with the existing document each time the `/scrape` url is visited and new data is obtained.
 
-* Used Bootstrap to structure your HTML template.
+* Used Bootstrap to structure the HTML template.
 
 
